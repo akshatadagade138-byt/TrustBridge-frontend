@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
+import TermsModal from "@/components/site/TermsModal";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const SUBJECTS = [
   "Couples / Relationship",
   "Corporate / Boardroom",
-  "Founder & Co-founder",
+  "Business",
   "Family / Inheritance",
   "Other",
 ];
@@ -21,11 +22,14 @@ export default function ContactSection() {
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
+
+  const BUSINESS_SUBJECTS = ["Corporate / Boardroom", "Business"];
+  const isBusiness = BUSINESS_SUBJECTS.includes(form.subject);
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const validateForm = () => {
     const phoneDigits = form.phone.replace(/\D/g, "");
     if (
       !form.name.trim() ||
@@ -33,13 +37,26 @@ export default function ContactSection() {
       !form.message.trim()
     ) {
       toast.error("Please share your name, email, phone, and a brief message.");
-      return;
+      return false;
     }
     if (phoneDigits.length !== 10) {
       toast.error("Please enter a valid 10-digit phone number.");
-      return;
+      return false;
     }
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setShowTermsModal(true);
+    }
+  };
+
+  const handleTermsAccepted = async () => {
+    setShowTermsModal(false);
     setSubmitting(true);
+    const phoneDigits = form.phone.replace(/\D/g, "");
     try {
       const res = await fetch(`${BACKEND_URL}/api/contact`, {
         method: "POST",
@@ -250,6 +267,13 @@ export default function ContactSection() {
           </form>
         </div>
       </div>
+
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        onAccept={handleTermsAccepted}
+        isBusiness={isBusiness}
+      />
     </section>
   );
 }

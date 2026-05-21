@@ -39,10 +39,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10">
           {/* Brand block */}
           <div className="md:col-span-5">
-            <h3 className="font-serif text-4xl md:text-5xl font-medium leading-[1.05] tracking-[0.01em]">
-              TrustBridge
-              <br />
-              <span className="italic text-sand">Counsel</span>
+            <h3 className="font-serif text-4xl md:text-5xl font-medium leading-[1.05] tracking-[0.01em] whitespace-nowrap">
+              TrustBridge <span className="italic text-sand">Counsel</span>
             </h3>
             <p className="mt-5 text-sand/80 tracking-[0.28em] uppercase text-[11px]">
               We listen · We act · We deliver
@@ -72,6 +70,8 @@ export default function Footer() {
                 { label: "About Us", to: "/about" },
                 { label: "Services", to: "/services" },
                 { label: "Blogs", to: "/blogs" },
+                { label: "Privacy Policy", to: "/privacy-policy" },
+                { label: "Disclaimer", to: "/disclaimer" },
               ].map((l) => (
                 <li key={l.to}>
                   <Link

@@ -7,6 +7,8 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Blogs from "@/pages/Blogs";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Disclaimer from "@/pages/Disclaimer";
 import { Toaster } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/site/ScrollToTop";
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
         <Footer />
         <WhatsAppButton />

@@ -68,7 +68,7 @@ function PainPointCard({ item }) {
       {/* Image with overlapping icon */}
       <div className="relative w-full mb-8">
         {/* Image */}
-        <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-sand/30 border border-sand/40">
+        <div className="w-full aspect-[2/3] rounded-2xl overflow-hidden bg-sand/30 border border-sand/40">
           {item.image ? (
             <img
               src={item.image}
@@ -163,7 +163,7 @@ export default function CouplesServices() {
         {/* ========== TOP: Pain Points Section ========== */}
         <div className="mb-10 md:mb-14">
           {/* Header row */}
-          <div className="grid lg:grid-cols-10 gap-10 lg:gap-16 items-start mb-12 md:mb-16">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 md:mb-16">
             {/* Left: Title */}
             <div className="lg:col-span-3">
               <h2 className="font-serif font-light text-espresso text-[48px] md:text-[64px] leading-[1] tracking-[-0.02em] italic">
@@ -177,8 +177,8 @@ export default function CouplesServices() {
             </div>
 
             {/* Right: 3 Pain Point Cards */}
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <div className="lg:col-span-9">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {PAIN_POINTS.map((item) => (
                   <PainPointCard key={item.id} item={item} />
                 ))}
