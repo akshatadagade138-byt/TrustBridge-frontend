@@ -2,7 +2,7 @@ export default function CenterQuote() {
   return (
     <section
       data-testid="center-quote-section"
-      className="relative py-32 md:py-44 overflow-hidden grain-overlay"
+      className="relative py-32 md:py-44 overflow-hidden grain-overlay hidden md:block"
       style={{
         background:
           "radial-gradient(ellipse at top, #5A4034 0%, #3B2A24 60%, #2A1E19 100%)",

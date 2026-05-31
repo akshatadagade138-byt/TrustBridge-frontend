@@ -8,7 +8,7 @@ import { useState } from "react";
  */
 const WHATSAPP_NUMBER = "919606938334"; // +91 96069 38334
 const PREFILLED_MESSAGE =
-  "Hello TrustBridge Counsel — I would like to know more about a Clarity-Communication Session.";
+  "Hello TrustBridge Counsel, I would like to know more about a Clarity-Communication Session.";
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);

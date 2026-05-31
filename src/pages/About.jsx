@@ -5,17 +5,14 @@ import {
   Scale,
 } from "lucide-react";
 
-const FOUNDER_IMAGE =
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=75";
+const FOUNDER_IMAGE = "/images/founder.jpg";
 
-const COMPANY_IMAGE =
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=75";
+const COMPANY_IMAGE = "/images/about_us.png";
 
 const SERVICES = [
   { icon: Users, text: "Couple & Family Dynamics" },
   { icon: Briefcase, text: "Workplace Conflict Resolution" },
-  { icon: MessageCircle, text: "Communication Strategy" },
-  { icon: Scale, text: "Pre-Legal Mediation" },
+  { icon: MessageCircle, text: "Communication Strategy" }
 ];
 
 export default function About() {
@@ -55,7 +52,7 @@ export default function About() {
               </h2>
 
               <p className="mt-8 text-sand/90 text-lg leading-relaxed font-light">
-                We help individuals, couples, and organizations navigate conflict with clarity and structure —
+                We help individuals, couples, and organizations navigate conflict with clarity and structure
                 before it escalates into legal, emotional, or relational damage.
               </p>
 
@@ -149,10 +146,10 @@ export default function About() {
         />
 
         <div className="relative max-w-[1200px] mx-auto px-6 lg:px-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Portrait */}
-            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-              <div className="relative w-full max-w-[380px] aspect-[3/4]">
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2 lg:mt-56">
+              <div className="relative w-full max-w-[520px] aspect-[4/5]">
                 <div
                   aria-hidden
                   className="absolute -top-8 -right-8 w-[70%] h-[70%] rounded-full blur-3xl opacity-50"
@@ -210,7 +207,7 @@ export default function About() {
                 <span className="px-4 py-2 rounded-full bg-espresso/10 text-espresso text-xs font-medium">B.B.M.</span>
                 <span className="px-4 py-2 rounded-full bg-espresso/10 text-espresso text-xs font-medium">PG · HRM</span>
                 <span className="px-4 py-2 rounded-full bg-espresso/10 text-espresso text-xs font-medium">LL.B.</span>
-                <span className="px-4 py-2 rounded-full bg-espresso/10 text-espresso text-xs font-medium">Mediation</span>
+                <span className="px-4 py-2 rounded-full bg-transparent border border-espresso/20 text-espresso/50 text-xs font-light italic">Mediation (in process)</span>
               </div>
 
               <p className="mt-8 font-serif italic text-walnut/80 text-lg">

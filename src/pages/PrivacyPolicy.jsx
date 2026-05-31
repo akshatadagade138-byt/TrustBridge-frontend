@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
             <div>
               <h2 className="font-serif font-semibold text-espresso text-xl md:text-2xl mb-4">1. Introduction</h2>
               <p>
-                In TrustBridge Counsel, We respect your privacy and are committed to protecting the personal
+                At TrustBridge Counsel, we respect your privacy and are committed to protecting the personal
                 information shared with us through our website, workshops, consultations, programs,
                 forms, and communications.
               </p>
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
             <div>
               <h2 className="font-serif font-semibold text-espresso text-xl md:text-2xl mb-4">4. Confidentiality</h2>
               <p>
-                TrustBridge values discretion and confidentiality. Information voluntarily shared during
+                TrustBridge Counsel values discretion and confidentiality. Information voluntarily shared during
                 sessions or programs is treated responsibly and respectfully.
               </p>
               <p className="mt-3">
@@ -129,7 +129,7 @@ export default function PrivacyPolicy() {
               <h2 className="font-serif font-semibold text-espresso text-xl md:text-2xl mb-4">9. Third-Party Platforms</h2>
               <p>
                 Our website or communications may contain links to third-party platforms or services.
-                TrustBridge is not responsible for their privacy practices.
+                TrustBridge Counsel is not responsible for their privacy practices.
               </p>
             </div>
 

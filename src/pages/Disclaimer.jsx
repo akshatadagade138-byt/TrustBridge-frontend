@@ -28,7 +28,7 @@ export default function Disclaimer() {
               <h2 className="font-serif font-semibold text-espresso text-xl md:text-2xl mb-4">1. General Information</h2>
               <p>
                 The information, workshops, consultations, programs, content, and materials provided by
-                TrustBridge Counsel are intended for educational, professional development, communication,
+                TrustBridge Counsel services are intended for educational, professional development, communication,
                 and general guidance purposes only.
               </p>
               <p className="mt-3">

@@ -1,4 +1,6 @@
-import { MessageSquareWarning, ThumbsDown, Theater, Presentation, CalendarClock, BadgeCheck, ShieldOff } from "lucide-react";
+import { useState, useCallback } from "react";
+import { MessageSquareWarning, ThumbsDown, Theater, Presentation, CalendarClock, BadgeCheck, ShieldOff, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 /**
  * Corporate Teams Services Section — Home page only
@@ -151,10 +153,21 @@ function ServiceCard({ service }) {
 }
 
 export default function CorporateServices() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center' });
+  const [showServices, setShowServices] = useState(false);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <section
       data-testid="corporate-services"
-      className="relative pt-16 md:pt-12 pb-28 md:pb-20"
+      className="relative pt-16 md:pt-12 pb-16 md:pb-20"
       style={{
         background: "linear-gradient(180deg, #F7F2EE 0%, #ECE2D6 100%)",
       }}
@@ -165,17 +178,58 @@ export default function CorporateServices() {
         <div className="mb-10 md:mb-14">
           {/* Header row - reversed layout */}
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-12 md:mb-16">
-            {/* Left: 3 Pain Point Cards */}
+            {/* Mobile: Title first, then images */}
+            <div className="md:hidden mb-8">
+              <h2 className="font-serif font-light text-espresso text-[48px] md:text-[64px] leading-[1] tracking-[-0.02em] italic">
+                Corporate Teams.
+              </h2>
+              <div className="w-12 h-px bg-gold mt-4 mb-6" />
+              <p className="text-walnut/85 text-lg md:text-xl leading-relaxed font-light">
+                When alignment breaks down,{" "}
+                <span className="text-gold italic">structure</span> builds it back.
+              </p>
+            </div>
+
+            {/* Left: 3 Pain Point Cards - Carousel on mobile, Grid on desktop */}
             <div className="lg:col-span-9 lg:order-1">
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {/* Mobile Carousel with arrows */}
+              <div className="md:hidden relative">
+                <div className="overflow-hidden" ref={emblaRef}>
+                  <div className="flex gap-4">
+                    {PAIN_POINTS.map((item) => (
+                      <div key={item.id} className="flex-[0_0_80%] min-w-0">
+                        <PainPointCard item={item} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Navigation Arrows */}
+                <button
+                  onClick={scrollPrev}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 rounded-full bg-ivory/90 border border-gold/40 shadow-lg flex items-center justify-center hover:bg-cream transition-colors z-10"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft size={20} className="text-espresso" />
+                </button>
+                <button
+                  onClick={scrollNext}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 rounded-full bg-ivory/90 border border-gold/40 shadow-lg flex items-center justify-center hover:bg-cream transition-colors z-10"
+                  aria-label="Next"
+                >
+                  <ChevronRight size={20} className="text-espresso" />
+                </button>
+              </div>
+
+              {/* Desktop Grid */}
+              <div className="hidden md:grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {PAIN_POINTS.map((item) => (
                   <PainPointCard key={item.id} item={item} />
                 ))}
               </div>
             </div>
 
-            {/* Right: Title */}
-            <div className="lg:col-span-3 lg:order-2 lg:text-right">
+            {/* Right: Title (Desktop only - mobile shows above) */}
+            <div className="hidden lg:block lg:col-span-3 lg:order-2 lg:text-right">
               <h2 className="font-serif font-light text-espresso text-[48px] md:text-[64px] leading-[1] tracking-[-0.02em] italic">
                 Corporate Teams.
               </h2>
@@ -190,21 +244,48 @@ export default function CorporateServices() {
 
         {/* ========== BOTTOM: Services Section ========== */}
         <div>
-          {/* Header with lines */}
-          <div className="flex items-center justify-center gap-6 mb-10 md:mb-14">
-            <span className="flex-1 max-w-[120px] h-px bg-gradient-to-r from-transparent to-gold/60" />
-            <h3 className="font-serif font-light text-espresso text-[28px] md:text-[38px] leading-[1.1] tracking-[0.08em] uppercase">
-              Our Services
-            </h3>
-            <span className="flex-1 max-w-[120px] h-px bg-gradient-to-l from-transparent to-gold/60" />
+          {/* Mobile: Expandable Button */}
+          <div className="md:hidden flex justify-center mb-6">
+            <button
+              onClick={() => setShowServices(!showServices)}
+              className="cta-gold inline-flex items-center gap-2 font-sans text-[13px] tracking-[0.18em] uppercase rounded-full px-7 py-3"
+            >
+              <span>{showServices ? 'Hide Services' : 'View Our Services'}</span>
+              {showServices ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
           </div>
 
-          {/* Service Cards Grid - narrower width */}
-          <div className="max-w-3xl mx-auto">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {/* Mobile: Collapsible Services */}
+          <div className={`md:hidden overflow-hidden transition-all duration-500 ${showServices ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <span className="flex-1 max-w-[80px] h-px bg-gradient-to-r from-transparent to-gold/60" />
+              <h3 className="font-serif font-light text-espresso text-[24px] leading-[1.1] tracking-[0.08em] uppercase">
+                Our Services
+              </h3>
+              <span className="flex-1 max-w-[80px] h-px bg-gradient-to-l from-transparent to-gold/60" />
+            </div>
+            <div className="grid grid-cols-1 gap-4 max-w-sm mx-auto">
               {SERVICES.map((service) => (
                 <ServiceCard key={service.id} service={service} />
               ))}
+            </div>
+          </div>
+
+          {/* Desktop: Always Visible */}
+          <div className="hidden md:block">
+            <div className="flex items-center justify-center gap-6 mb-10 md:mb-14">
+              <span className="flex-1 max-w-[120px] h-px bg-gradient-to-r from-transparent to-gold/60" />
+              <h3 className="font-serif font-light text-espresso text-[28px] md:text-[38px] leading-[1.1] tracking-[0.08em] uppercase">
+                Our Services
+              </h3>
+              <span className="flex-1 max-w-[120px] h-px bg-gradient-to-l from-transparent to-gold/60" />
+            </div>
+            <div className="max-w-3xl mx-auto">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                {SERVICES.map((service) => (
+                  <ServiceCard key={service.id} service={service} />
+                ))}
+              </div>
             </div>
           </div>
         </div>

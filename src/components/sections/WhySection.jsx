@@ -54,7 +54,7 @@ export default function WhySection() {
         <div className="grid md:grid-cols-12 gap-10 items-end mb-20">
           <div className="md:col-span-7">
             <h2 className="font-serif font-light text-espresso text-[40px] md:text-[56px] leading-[1.02] tracking-[-0.005em]">
-              Why <span className="italic text-walnut">TrustBridge</span> Counsel?
+              Why <span className="italic text-walnut">TrustBridge Counsel</span>?
             </h2>
           </div>
         </div>

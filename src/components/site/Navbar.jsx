@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Blogs", to: "/blogs" },
 ];
 
 export default function Navbar() {
@@ -62,12 +61,7 @@ export default function Navbar() {
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10 flex items-center justify-between h-[78px]">
         {/* Brand */}
         <Link to="/" data-testid="nav-brand" className="flex items-center">
-          <img
-            src="/images/logo/logo.png"
-            alt="TrustBridge Counsel"
-            className="h-16 md:h-20 w-auto"
-          />
-          <div className="flex flex-col leading-none -ml-2">
+          <div className="flex flex-col leading-none">
             <span
               className={`font-serif text-[22px] md:text-[26px] font-semibold tracking-[0.02em] transition-colors duration-300 ${brandColor}`}
             >
@@ -79,6 +73,11 @@ export default function Navbar() {
               We listen · We act · We deliver
             </span>
           </div>
+          <img
+            src="/images/logo/logo.png"
+            alt="TrustBridge Counsel"
+            className="h-8 md:h-10 w-auto -ml-1"
+          />
         </Link>
 
         {/* Desktop nav */}

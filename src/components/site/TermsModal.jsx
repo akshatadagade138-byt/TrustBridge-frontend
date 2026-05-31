@@ -5,37 +5,37 @@ const GENERIC_TERMS = [
   {
     title: "1. Acceptance of Terms",
     content:
-      "By accessing the TrustBridge website, programs, workshops, consultations, sessions, materials, or services, you agree to comply with these Terms & Conditions. If you do not agree with these terms, you should discontinue use of our services and website.",
+      "By accessing the TrustBridge Counsel website, programs, workshops, consultations, sessions, materials, or services, you agree to comply with these Terms & Conditions. If you do not agree with these terms, you should discontinue use of our services and website.",
   },
   {
     title: "2. Services",
     content:
-      "TrustBridge provides communication, conflict management, behavioural, leadership, relationship, coaching, educational, and professional development services. All services are provided on a best-effort and professional guidance basis.",
+      "TrustBridge Counsel provides communication, conflict management, behavioural, leadership, relationship, coaching, educational, and professional development services. All services are provided on a best-effort and professional guidance basis.",
   },
   {
     title: "3. Bookings and Payments",
     content:
-      "Session or workshop bookings may require advance payment. Fees once paid may be non-refundable unless otherwise stated. TrustBridge reserves the right to reschedule, modify, or cancel services where necessary. Any refund, rescheduling, or cancellation decisions shall be subject to applicable service terms communicated at the time of booking.",
+      "Session or workshop bookings may require advance payment. Fees once paid may be non-refundable unless otherwise stated. TrustBridge Counsel reserves the right to reschedule, modify, or cancel services where necessary. Any refund, rescheduling, or cancellation decisions shall be subject to applicable service terms communicated at the time of booking.",
   },
   {
     title: "4. Participant Conduct",
     content:
-      "Users and participants agree to provide accurate information, not to misuse, disrupt, copy, or exploit TrustBridge content or services, and not to engage in abusive, defamatory, threatening, unlawful, or inappropriate conduct during sessions or communications. TrustBridge reserves the right to refuse or discontinue services in cases of misconduct or misuse.",
+      "Users and participants agree to provide accurate information, not to misuse, disrupt, copy, or exploit TrustBridge Counsel content or services, and not to engage in abusive, defamatory, threatening, unlawful, or inappropriate conduct during sessions or communications. TrustBridge Counsel reserves the right to refuse or discontinue services in cases of misconduct or misuse.",
   },
   {
     title: "5. Intellectual Property",
     content:
-      "All TrustBridge content including workshop materials, frameworks, presentations, branding, logos, written content, videos and digital resources remain the intellectual property of TrustBridge unless otherwise stated. No material may be copied, reproduced, distributed, recorded, or commercially used without prior written permission.",
+      "All TrustBridge Counsel content including workshop materials, frameworks, presentations, branding, logos, written content, videos and digital resources remain the intellectual property of TrustBridge Counsel unless otherwise stated. No material may be copied, reproduced, distributed, recorded, or commercially used without prior written permission.",
   },
   {
     title: "6. Confidentiality",
     content:
-      "TrustBridge makes reasonable efforts to maintain confidentiality during programs and consultations. However, participants acknowledge that complete confidentiality cannot be guaranteed in group workshops, online platforms, or third-party digital communication systems.",
+      "TrustBridge Counsel makes reasonable efforts to maintain confidentiality during programs and consultations. However, participants acknowledge that complete confidentiality cannot be guaranteed in group workshops, online platforms, or third-party digital communication systems.",
   },
   {
     title: "7. Limitation of Liability",
     content:
-      "TrustBridge shall not be responsible for personal decisions or outcomes arising from participation, indirect or consequential losses, technical interruptions or website downtime, or third-party platform failures. Use of TrustBridge services is at the participant's own discretion and responsibility.",
+      "TrustBridge Counsel shall not be responsible for personal decisions or outcomes arising from participation, indirect or consequential losses, technical interruptions or website downtime, or third-party platform failures. Use of TrustBridge Counsel services is at the participant's own discretion and responsibility.",
   },
   {
     title: "8. Website Usage",
@@ -45,7 +45,7 @@ const GENERIC_TERMS = [
   {
     title: "9. Modifications",
     content:
-      "TrustBridge may update these Terms & Conditions or website content at any time without prior notice. Continued use of the website or services constitutes acceptance of revised terms.",
+      "TrustBridge Counsel may update these Terms & Conditions or website content at any time without prior notice. Continued use of the website or services constitutes acceptance of revised terms.",
   },
   {
     title: "10. Governing Law",

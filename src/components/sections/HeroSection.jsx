@@ -60,11 +60,11 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-8 max-w-xl text-sand/85 text-[15px] md:text-[17px] leading-relaxed font-light">
-            I am a Conflict & Communication Strategist. I help couples, corporates, and business leaders identify and resolve communication patterns that create conflict—bringing clarity, alignment, and forward movement.
+            I am a Conflict & Communication Strategist. I help couples, corporates, and business leaders identify and resolve communication patterns that create conflict bringing clarity, alignment, and forward movement.
           </p>
 
           <p className="mt-4 max-w-xl text-sand/70 text-[14px] md:text-[15px] leading-relaxed font-light">
-            My role is to help them understand patterns, de-escalate situations, and make clear decisions—whether that means repairing the relationship or separating without unnecessary damage.
+            My role is to help them understand patterns, de-escalate situations, and make clear decisions, whether that means repairing the relationship or separating without unnecessary damage.
           </p>
 
           {/* CTA — highlighted primary */}

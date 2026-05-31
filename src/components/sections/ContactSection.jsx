@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
-import TermsModal from "@/components/site/TermsModal";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -22,10 +21,6 @@ export default function ContactSection() {
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  const [showTermsModal, setShowTermsModal] = useState(false);
-
-  const BUSINESS_SUBJECTS = ["Corporate / Boardroom", "Business"];
-  const isBusiness = BUSINESS_SUBJECTS.includes(form.subject);
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -46,15 +41,10 @@ export default function ContactSection() {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      setShowTermsModal(true);
-    }
-  };
+    if (!validateForm()) return;
 
-  const handleTermsAccepted = async () => {
-    setShowTermsModal(false);
     setSubmitting(true);
     const phoneDigits = form.phone.replace(/\D/g, "");
     try {
@@ -67,7 +57,7 @@ export default function ContactSection() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.detail || "Submission failed");
       }
-      toast.success("Thank you — your request has been received in confidence.", {
+      toast.success("Thank you! Your request has been received in confidence.", {
         description: "We will reach out within one business day.",
       });
       setForm({
@@ -160,7 +150,7 @@ export default function ContactSection() {
             }}
           >
             <p className="font-serif italic text-sand/70 text-base mb-10">
-              In confidence —
+              In confidence
             </p>
 
             <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
@@ -267,13 +257,6 @@ export default function ContactSection() {
           </form>
         </div>
       </div>
-
-      <TermsModal
-        isOpen={showTermsModal}
-        onClose={() => setShowTermsModal(false)}
-        onAccept={handleTermsAccepted}
-        isBusiness={isBusiness}
-      />
     </section>
   );
 }

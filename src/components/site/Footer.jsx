@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Linkedin, Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -37,8 +37,8 @@ export default function Footer() {
 
       <div className="relative max-w-[1280px] mx-auto px-6 lg:px-10 pt-24 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10">
-          {/* Brand block */}
-          <div className="md:col-span-5">
+          {/* Brand block - Hidden on mobile */}
+          <div className="hidden md:block md:col-span-5">
             <h3 className="font-serif text-4xl md:text-5xl font-medium leading-[1.05] tracking-[0.01em] whitespace-nowrap">
               TrustBridge <span className="italic text-sand">Counsel</span>
             </h3>
@@ -46,7 +46,7 @@ export default function Footer() {
               We listen · We act · We deliver
             </p>
             <p className="mt-8 max-w-md text-cream/70 leading-relaxed font-light">
-              A private practice for conflict, communication & alignment —
+              A private practice for conflict, communication & alignment,
               built for the moments where clarity matters most.
             </p>
 
@@ -61,15 +61,14 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-3">
+          {/* Quick Links - Full width on mobile */}
+          <div className="md:col-span-3 col-span-full">
             <p className="eyebrow text-sand/70 mb-6">Navigate</p>
             <ul className="space-y-3 font-light">
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
                 { label: "Services", to: "/services" },
-                { label: "Blogs", to: "/blogs" },
                 { label: "Privacy Policy", to: "/privacy-policy" },
                 { label: "Disclaimer", to: "/disclaimer" },
               ].map((l) => (
@@ -86,19 +85,62 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact placeholder */}
-          <div className="md:col-span-4">
+          {/* Contact - Full width on mobile */}
+          <div className="md:col-span-4 col-span-full">
             <p className="eyebrow text-sand/70 mb-6">Reach Us</p>
             <ul className="space-y-4 font-light text-cream/85">
               <li className="flex items-start gap-3">
                 <Phone size={16} className="text-gold mt-1 shrink-0" />
-                <span data-testid="footer-phone">9606938334</span>
+                <div className="flex flex-col gap-1">
+                  <span data-testid="footer-phone">9606938334</span>
+                  <span data-testid="footer-phone-2">9113986201</span>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail size={16} className="text-gold mt-1 shrink-0" />
-                <span data-testid="footer-email">pinky@trustbridgecounsel.in</span>
+                <span data-testid="footer-email">pinkeybas@gmail.com</span>
               </li>
             </ul>
+
+            {/* Social Media */}
+            <div className="mt-8">
+              <p className="eyebrow text-sand/70 mb-4">Follow Us</p>
+              <div className="flex gap-4">
+                {/* LinkedIn */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                  style={{ backgroundColor: '#0077B5' }}
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={18} className="text-white" />
+                </a>
+                {/* Instagram */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                  style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)' }}
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} className="text-white" />
+                </a>
+                {/* Twitter */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                  style={{ backgroundColor: '#1DA1F2' }}
+                  aria-label="Twitter"
+                >
+                  <Twitter size={18} className="text-white" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
