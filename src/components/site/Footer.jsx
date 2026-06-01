@@ -93,7 +93,7 @@ export default function Footer() {
                 <Phone size={16} className="text-gold mt-1 shrink-0" />
                 <div className="flex flex-col gap-1">
                   <span data-testid="footer-phone">9606938334</span>
-                  <span data-testid="footer-phone-2">9113986201</span>
+                  <span data-testid="footer-phone-2">9113985201</span>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -119,7 +119,7 @@ export default function Footer() {
                 </a>
                 {/* Instagram */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/trustbridgecounsel?utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"

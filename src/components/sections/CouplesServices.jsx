@@ -13,19 +13,19 @@ import useEmblaCarousel from "embla-carousel-react";
 const PAIN_POINTS = [
   {
     id: 1,
-    image: "/images/couple/Cimage1.png",
+    image: "/images/couple/Cimage1.webp",
     icon: MessageCircle,
     text: "Connection feels distant.",
   },
   {
     id: 2,
-    image: "/images/couple/Cimage2.png",
+    image: "/images/couple/Cimage2.webp",
     icon: Scale,
     text: "Considering legal options.",
   },
   {
     id: 3,
-    image: "/images/couple/Cimage3.png",
+    image: "/images/couple/Cimage3.webp",
     icon: Building2,
     text: "Worried about family impact.",
   },

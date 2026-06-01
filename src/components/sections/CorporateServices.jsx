@@ -15,19 +15,19 @@ import useEmblaCarousel from "embla-carousel-react";
 const PAIN_POINTS = [
   {
     id: 1,
-    image: "/images/corporate/gap.png",
+    image: "/images/corporate/gap.webp",
     icon: MessageSquareWarning,
     text: "Communication gaps.",
   },
   {
     id: 2,
-    image: "/images/corporate/critism.png",
+    image: "/images/corporate/critism.webp",
     icon: ThumbsDown,
     text: "Input lands as criticism.",
   },
   {
     id: 3,
-    image: "/images/corporate/trust.png",
+    image: "/images/corporate/trust.webp",
     icon: ShieldOff,
     text: "Trust is thinning.",
   },

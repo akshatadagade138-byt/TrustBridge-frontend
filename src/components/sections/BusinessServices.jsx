@@ -15,13 +15,13 @@ import useEmblaCarousel from "embla-carousel-react";
 const PAIN_POINTS = [
   {
     id: 1,
-    image: "/images/business/pending.png",
+    image: "/images/business/pending.webp",
     icon: Clock,
     text: "Decisions delayed.",
   },
   {
     id: 2,
-    image: "/images/business/alignment.png",
+    image: "/images/business/alignment.webp",
     icon: Users2,
     text: "Alignment breaking down.",
   },
