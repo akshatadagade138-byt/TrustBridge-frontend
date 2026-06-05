@@ -6,6 +6,7 @@ import WhoThisIsFor from "@/components/sections/WhoThisIsFor";
 import CouplesServices from "@/components/sections/CouplesServices";
 import CorporateServices from "@/components/sections/CorporateServices";
 import BusinessServices from "@/components/sections/BusinessServices";
+import GallerySection from "@/components/sections/GallerySection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
@@ -27,6 +28,8 @@ export default function Home() {
       <CorporateServices />
       {/* LIGHT */}
       <BusinessServices />
+      {/* LIGHT */}
+      <GallerySection />
       {/* DARK */}
       <ContactSection />
     </main>

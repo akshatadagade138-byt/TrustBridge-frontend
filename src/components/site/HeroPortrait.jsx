@@ -1,5 +1,5 @@
 /**
- * HeroPortrait — YouTube video inside an editorial dark-glass frame
+ * HeroPortrait — local video inside an editorial dark-glass frame
  */
 
 export default function HeroPortrait() {
@@ -34,15 +34,15 @@ export default function HeroPortrait() {
             "linear-gradient(160deg, rgba(90,64,52,0.55) 0%, rgba(59,42,36,0.45) 60%, rgba(42,30,25,0.65) 100%)",
         }}
       >
-        {/* YouTube Video Embed */}
-        <iframe
+        {/* Local video */}
+        <video
           className="absolute inset-0 w-full h-full border-0"
-          src="https://www.youtube.com/embed/Mcj9ZpEsp18?si=U3cP2KEyPghobrP0"
+          src="/images/hero_video.mp4"
           title="TrustBridge Counsel"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+          controls
+          playsInline
+          preload="metadata"
+        />
       </div>
     </div>
   );
