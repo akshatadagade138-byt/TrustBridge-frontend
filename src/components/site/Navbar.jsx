@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Services", to: "/services" },
+  { label: "Gallery", to: "/#gallery" },
 ];
 
 export default function Navbar() {
@@ -81,9 +82,12 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => {
-            const active = location.pathname === link.to;
+            const active =
+              link.to.includes("#")
+                ? location.pathname === "/" && location.hash === "#gallery"
+                : location.pathname === link.to && !location.hash;
             return (
               <Link
                 key={link.to}

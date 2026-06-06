@@ -1,19 +1,26 @@
-import { Image } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const GALLERY_ITEMS = [
-  { id: 1, label: "Gallery image 1" },
-  { id: 2, label: "Gallery image 2" },
-  { id: 3, label: "Gallery image 3" },
-  { id: 4, label: "Gallery image 4" },
-  { id: 5, label: "Gallery image 5" },
-  { id: 6, label: "Gallery image 6" },
+  { id: 1, label: "Gallery image 1", src: "/images/gallery/G5.webp" },
+  { id: 2, label: "Gallery image 2", src: "/images/gallery/G1.webp" },
+  { id: 3, label: "Gallery image 3", src: "/images/gallery/G2.webp" },
+  { id: 4, label: "Gallery image 4", src: "/images/gallery/G3.webp" },
+  { id: 5, label: "Gallery image 5", src: "/images/gallery/G4.webp" },
+  { id: 6, label: "Gallery image 6", src: "/images/gallery/G6.webp" },
 ];
 
 export default function GallerySection() {
   return (
     <section
+      id="gallery"
       data-testid="gallery-section"
-      className="relative py-24 md:py-32 overflow-hidden grain-overlay"
+      className="relative py-24 md:py-32 overflow-hidden grain-overlay scroll-mt-[90px]"
       style={{
         background: "linear-gradient(180deg, #ECE2D6 0%, #F7F2EE 100%)",
       }}
@@ -31,28 +38,56 @@ export default function GallerySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="md:hidden">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="relative"
+          >
+            <CarouselContent className="-ml-3">
+              {GALLERY_ITEMS.map((item) => (
+                <CarouselItem key={item.id} className="basis-[84%] pl-3">
+                  <GalleryImage item={item} className="aspect-[4/5]" />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2 h-10 w-10 border-gold/40 bg-ivory/90 text-espresso shadow-lg hover:bg-cream disabled:opacity-40" />
+            <CarouselNext className="right-2 h-10 w-10 border-gold/40 bg-ivory/90 text-espresso shadow-lg hover:bg-cream disabled:opacity-40" />
+          </Carousel>
+        </div>
+
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {GALLERY_ITEMS.map((item, index) => (
-            <div
+            <GalleryImage
               key={item.id}
-              className={`group relative overflow-hidden rounded-[18px] border border-sand/50 bg-ivory/65 shadow-[0_24px_60px_-44px_rgba(59,42,36,0.45)] ${
+              item={item}
+              className={
                 index === 0 || index === 5
                   ? "col-span-2 aspect-[16/10]"
                   : "aspect-[4/5]"
-              }`}
-            >
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(176,141,87,0.18),rgba(250,248,246,0.86),rgba(90,64,52,0.12))]" />
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-cream/25" />
-              <div className="relative h-full flex flex-col items-center justify-center gap-3 text-mocha/45">
-                <Image size={26} strokeWidth={1.5} />
-                <span className="text-[10px] md:text-[11px] tracking-[0.24em] uppercase font-light">
-                  {item.label}
-                </span>
-              </div>
-            </div>
+              }
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function GalleryImage({ item, className = "" }) {
+  return (
+    <div
+      className={`group relative overflow-hidden rounded-[18px] border border-sand/50 bg-ivory/65 shadow-[0_24px_60px_-44px_rgba(59,42,36,0.45)] ${className}`}
+    >
+      <img
+        src={item.src}
+        alt={item.label}
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-cream/20" />
+    </div>
   );
 }
