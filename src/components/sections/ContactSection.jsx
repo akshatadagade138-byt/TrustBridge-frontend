@@ -8,7 +8,6 @@ const SUBJECTS = [
   "Couples / Relationship",
   "Corporate / Boardroom",
   "Business",
-  "Family / Inheritance",
   "Other",
 ];
 

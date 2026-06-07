@@ -20,9 +20,9 @@ export default function GallerySection() {
     <section
       id="gallery"
       data-testid="gallery-section"
-      className="relative py-24 md:py-32 overflow-hidden grain-overlay scroll-mt-[90px]"
+      className="relative py-16 md:py-20 overflow-hidden grain-overlay scroll-mt-[90px]"
       style={{
-        background: "linear-gradient(180deg, #ECE2D6 0%, #F7F2EE 100%)",
+        background: "linear-gradient(180deg, #F7F2EE 0%, #ECE2D6 100%)",
       }}
     >
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
@@ -33,9 +33,6 @@ export default function GallerySection() {
               Gallery.
             </h2>
           </div>
-          <p className="lg:col-span-6 lg:col-start-7 text-walnut/80 text-lg md:text-xl leading-relaxed font-light">
-            Moments from conversations, workshops, and spaces created for clarity.
-          </p>
         </div>
 
         <div className="md:hidden">
@@ -65,7 +62,7 @@ export default function GallerySection() {
               item={item}
               className={
                 index === 0 || index === 5
-                  ? "col-span-2 aspect-[16/10]"
+                  ? "col-span-2 aspect-[16/9]"
                   : "aspect-[4/5]"
               }
             />
